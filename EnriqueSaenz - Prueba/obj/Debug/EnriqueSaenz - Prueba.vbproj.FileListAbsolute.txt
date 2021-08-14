@@ -1,0 +1,12 @@
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\bin\Debug\EnriqueSaenz - Prueba.exe.config
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\bin\Debug\EnriqueSaenz - Prueba.exe
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\bin\Debug\EnriqueSaenz - Prueba.pdb
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\bin\Debug\EnriqueSaenz - Prueba.xml
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\obj\Debug\EnriqueSaenz - Prueba.vbprojAssemblyReference.cache
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\obj\Debug\EnriqueSaenz___Prueba.Principal.resources
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\obj\Debug\EnriqueSaenz___Prueba.Resources.resources
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\obj\Debug\EnriqueSaenz - Prueba.vbproj.GenerateResource.cache
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\obj\Debug\EnriqueSaenz - Prueba.vbproj.CoreCompileInputs.cache
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\obj\Debug\EnriqueSaenz - Prueba.exe
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\obj\Debug\EnriqueSaenz - Prueba.xml
+E:\Proyectos VB\EnriqueSaenz - Prueba\EnriqueSaenz - Prueba\obj\Debug\EnriqueSaenz - Prueba.pdb
