@@ -83,13 +83,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDPAGOSDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BDPAGOSDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPAGOSDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BDPAGOSproductos.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BDPAGOSproductos.xsd</DependentUpon>
     </Compile>
     <Compile Include="Conexion.vb" />
-    <Compile Include="Pagos.vb" />
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +150,17 @@
     </None>
     <None Include="BDPAGOSDataSet.xss">
       <DependentUpon>BDPAGOSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDPAGOSDataSet1.xsc">
+      <DependentUpon>BDPAGOSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BDPAGOSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPAGOSDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPAGOSDataSet1.xss">
+      <DependentUpon>BDPAGOSDataSet1.xsd</DependentUpon>
     </None>
     <None Include="BDPAGOSproductos.xsc">
       <DependentUpon>BDPAGOSproductos.xsd</DependentUpon>

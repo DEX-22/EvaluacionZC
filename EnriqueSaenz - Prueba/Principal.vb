@@ -1,5 +1,4 @@
 ﻿Imports EnriqueSaenz___Prueba.Conexion
-Imports EnriqueSaenz___Prueba.Pagos
 
 
 Public Class Principal
@@ -24,12 +23,16 @@ Public Class Principal
     End Sub
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'BDPAGOSDataSet1.PRODUCTO' Puede moverla o quitarla según sea necesario.
+        Me.PRODUCTOTableAdapter1.Fill(Me.BDPAGOSDataSet1.PRODUCTO)
+
+        'TODO: esta línea de código carga datos en la tabla 'BDPAGOS.PAGO' Puede moverla o quitarla según sea necesario.
+        Me.PAGOTableAdapter.Fill(Me.BDPAGOS.PAGO)
         'TODO: esta línea de código carga datos en la tabla 'BDPAGOS.USUARIO_CAJA' Puede moverla o quitarla según sea necesario.
         Me.USUARIO_CAJATableAdapter.Fill(Me.BDPAGOS.USUARIO_CAJA)
         'TODO: esta línea de código carga datos en la tabla 'BDPAGOS.CLIENTE' Puede moverla o quitarla según sea necesario.
         Me.CLIENTETableAdapter.Fill(Me.BDPAGOS.CLIENTE)
-        'TODO: esta línea de código carga datos en la tabla 'BDPAGOS.PRODUCTO' Puede moverla o quitarla según sea necesario.
-        Me.PRODUCTOTableAdapter.Fill(Me.BDPAGOS.PRODUCTO)
+
         'TODO: esta línea de código carga datos en la tabla 'BDPAGOS.USUARIO_CAJA' Puede moverla o quitarla según sea necesario.
         Me.USUARIO_CAJATableAdapter.Fill(Me.BDPAGOS.USUARIO_CAJA)
         'TODO: esta línea de código carga datos en la tabla 'BDPAGOS.CLIENTE' Puede moverla o quitarla según sea necesario.
@@ -55,9 +58,12 @@ Public Class Principal
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
 
-        MsgBox("se eliminó :" + id)
-        'SQL.Eliminar(id)
-        '  SQL.Listar(TablaPagos)
+
+        SQL.Eliminar(id)
+        'MsgBox("se eliminó :" + Me.id)
+        txtId.Text = ""
+
+        SQL.Listar(TablaPagos)
 
 
 
@@ -69,17 +75,43 @@ Public Class Principal
 
 
         SQL.Modificar(id, cboxProducto.SelectedValue.ToString, cboxCliente.SelectedValue, cboxUsuario.SelectedValue, txtFecha.Value, txtTotal.Value, txtObservacion.Text, chbxEstado.Checked.ToString())
-
+        SQL.Listar(TablaPagos)
+        txtId.Text = ""
+        cboxCliente.SelectedIndex = 0
+        cboxProducto.SelectedIndex = 0
+        cboxUsuario.SelectedIndex = 0
+        chbxEstado.CheckState = False
+        txtTotal.Value = 0
+        txtObservacion.Text = ""
 
 
 
 
     End Sub
 
-    Private Sub TablaPagos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaPagos.CellContentClick
+    Private Sub TablaPagos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaPagos.CellContentClick
 
 
-        txtId.Text = TablaPagos.Item(0, e.RowIndex).Value
+        If e.RowIndex >= 0 Then
+            TablaPagos.CurrentCell = TablaPagos.Item(0, e.RowIndex)
+
+            Me.id = TablaPagos.CurrentCell.Value
+
+
+
+            txtId.Text = Me.id
+        End If
+        'TablaPagos.Item(0, e.RowIndex).Value
+
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim Opcion As Integer = cboxOpcion.SelectedIndex + 1
+        Dim Dato As String = txtDato.Text
+
+        SQL.Reportes(TablaReportes, Dato, Opcion)
+
 
 
     End Sub

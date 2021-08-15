@@ -85,6 +85,41 @@ Public Class Conexion
         Consulta.ExecuteNonQuery()
         MsgBox("Se eliminó con exito")
     End Sub
+    Public Sub Reportes(Tabla As DataGridView, Dato As String, Opcion As Integer)
+
+        DataTable = New DataTable
+
+
+        Conectar()
+        Me.Conexion.Open()
+
+
+        If Opcion = 1 Then
+            SqlDataAdapter = New SqlDataAdapter("EXEC SP_REPORT_PAGO " & Dato & ",'',''," & Opcion, Conexion)
+
+        ElseIf Opcion = 2 Then
+            SqlDataAdapter = New SqlDataAdapter("EXEC SP_REPORT_PAGO ''," & Dato & ",''," & Opcion, Conexion)
+
+        ElseIf Opcion = 3 Then
+            SqlDataAdapter = New SqlDataAdapter("EXEC SP_REPORT_PAGO '',''," & Dato & "," & Opcion, Conexion)
+
+        End If
+
+
+
+
+        SqlDataAdapter.Fill(DataTable)
+        Tabla.DataSource = DataTable
+
+        Me.Conexion.Close()
+
+
+
+
+
+    End Sub
+
+
 
 
 End Class
