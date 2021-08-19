@@ -95,10 +95,22 @@ Public Class Conexion
 
 
         If Opcion = 1 Then
-            SqlDataAdapter = New SqlDataAdapter("EXEC SP_REPORT_PAGO " & Dato & ",'',''," & Opcion, Conexion)
+            If Dato.Length = 4 Then
+                SqlDataAdapter = New SqlDataAdapter("EXEC SP_REPORT_PAGO " & Dato & ",'',''," & Opcion, Conexion)
+            Else
+                MsgBox("el codigo ingresado excede el maximo de caracteres permitidos")
+
+            End If
+
+
 
         ElseIf Opcion = 2 Then
-            SqlDataAdapter = New SqlDataAdapter("EXEC SP_REPORT_PAGO ''," & Dato & ",''," & Opcion, Conexion)
+            If Dato.Length = 8 Then
+                SqlDataAdapter = New SqlDataAdapter("EXEC SP_REPORT_PAGO ''," & Dato & ",''," & Opcion, Conexion)
+            Else
+                MsgBox("El DNI ingresado no es valido")
+            End If
+
 
         ElseIf Opcion = 3 Then
             SqlDataAdapter = New SqlDataAdapter("EXEC SP_REPORT_PAGO '',''," & Dato & "," & Opcion, Conexion)
